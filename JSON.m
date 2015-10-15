@@ -67,6 +67,15 @@ typedef enum {
     return [[self alloc] initWithJSONobject:[NSNull null]];
 }
 
+- (instancetype)initWithObject:(id)object {
+    if ([object isKindOfClass:[NSData class]]) {
+        return [self initWithData:object];
+    }
+    else {
+        return [self initWithJSONobject:object];
+    }
+}
+
 - (instancetype)initWithData:(NSData *)data {
     return [self initWithData:data options:NSJSONReadingAllowFragments error:nil];
 }

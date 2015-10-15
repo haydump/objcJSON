@@ -41,8 +41,9 @@ typedef enum {
 @property (nonatomic, readonly) JSONtype type;
 @property (nonatomic, strong) NSError * error;
 
-- (instancetype)initWithJSONobject:(id)object;
-- (instancetype)initWithData:(NSData *)data;
+- (instancetype)initWithObject:(id)object; // accept both NSData and other JSON object values
+- (instancetype)initWithJSONobject:(id)object; // NSDictionary, NSArray, NSNumber, NSString, NSNull, JSON
+- (instancetype)initWithData:(NSData *)data; // only accept NSData
 - (instancetype)initWithData:(NSData *)data options:(NSJSONReadingOptions)opt error:(NSError **)error;
 
 // subscripting:
