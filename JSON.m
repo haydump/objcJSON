@@ -128,7 +128,7 @@ typedef enum {
  *
  *  @return array[idx] as JSON, or nullJSON otherwise
  */
-- (id)objectAtIndexedSubscript:(NSUInteger)idx {
+- (JSON *)objectAtIndexedSubscript:(NSUInteger)idx {
     if (_type == JSONtypeArray) {
         NSArray * arr = _object;
         if (idx < [arr count]) {
@@ -151,7 +151,7 @@ typedef enum {
  *
  *  @return dictionary[key] as JSON, or nullJSON otherwise
  */
-- (id)objectForKeyedSubscript:(id)key {
+- (JSON *)objectForKeyedSubscript:(id)key {
     if (_type == JSONtypeDictionary) {
         NSDictionary * dict = self.object;
         id object = [dict objectForKey:key];

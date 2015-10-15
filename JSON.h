@@ -46,8 +46,8 @@ typedef enum {
 - (instancetype)initWithData:(NSData *)data options:(NSJSONReadingOptions)opt error:(NSError **)error;
 
 // subscripting:
-- (id)objectAtIndexedSubscript:(NSUInteger)idx;
-- (id)objectForKeyedSubscript:(id)key;
+- (JSON *)objectAtIndexedSubscript:(NSUInteger)idx;
+- (JSON *)objectForKeyedSubscript:(id)key;
 
 - (NSDictionary *)dictionary;
 - (NSArray *)array;
